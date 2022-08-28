@@ -1,0 +1,20 @@
+<table class="table">
+<thead>
+<tr>
+<th>店名</th>
+<th>店舗名</th>
+<th>商品名</th>
+<th>価格</th>
+</tr>
+</thead>
+<tbody>
+<% @sales.each do |sale| %>
+<tr>
+<td><%= sale.shop.name %></td>
+<td><%= sale.shop.store_name %></td>
+<td><%= sale.product.name %></td>
+<td><%= sale.price%></td>
+</tr>
+<% end %>
+</tbody>
+</table>

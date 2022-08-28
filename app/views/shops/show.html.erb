@@ -1,0 +1,22 @@
+<div>
+<%= @shop.name %>
+<%= @shop.store_name %>
+</div>
+<%= link_to '戻る', shops_path %>
+<%= form_with model: @shop, url: "/shops/#{@shop.id}/sales", method: 'POST' do |f| %>
+<%= f.hidden_field :id %>
+<table>
+<thead>
+<tr>
+<th>商品名</th>
+<th>価格</th>
+</tr>
+</thead>
+<tbody>
+<%= f.fields_for :sales do |sale| %>
+<%= render 'sales/form', f: sale %>
+<% end %>
+</tbody>
+</table>
+<%= f.submit %>
+<% end %>

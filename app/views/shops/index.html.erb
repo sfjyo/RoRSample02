@@ -1,0 +1,19 @@
+<table class="table">
+<thead>
+<tr>
+<th>店名</th>
+<th>店舗名</th>
+</tr>
+</thead>
+<tbody>
+<% @shops.each do |shop| %>
+<tr>
+<td><%= shop.name %></td>
+<td><%= shop.store_name %></td>
+<td><%= link_to '編集', edit_shop_path(shop) %>
+<td><%= link_to '詳細', shop_path(shop) %>
+</tr>
+<% end %>
+</tbody>
+</table>
+<%= link_to '店追加', new_shop_path %>
